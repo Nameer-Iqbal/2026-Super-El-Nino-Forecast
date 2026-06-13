@@ -1,0 +1,14 @@
+[
+  {"year": 2026, "month": "Jan", "dmi": -0.1, "phase": "Neutral"},
+  {"year": 2026, "month": "Feb", "dmi": 0.0, "phase": "Neutral"},
+  {"year": 2026, "month": "Mar", "dmi": 0.1, "phase": "Neutral"},
+  {"year": 2026, "month": "Apr", "dmi": 0.3, "phase": "Neutral"},
+  {"year": 2026, "month": "May", "dmi": 0.5, "phase": "Positive"},
+  {"year": 2026, "month": "Jun", "dmi": 0.7, "phase": "Positive (Multiplying)"},
+  {"year": 2026, "month": "Jul", "dmi": 0.9, "phase": "Positive (Multiplying)"},
+  {"year": 2026, "month": "Aug", "dmi": 0.8, "phase": "Positive (Multiplying)"},
+  {"year": 2026, "month": "Sep", "dmi": 0.6, "phase": "Positive (Multiplying)"},
+  {"year": 2026, "month": "Oct", "dmi": 0.4, "phase": "Neutral"},
+  {"year": 2026, "month": "Nov", "dmi": 0.2, "phase": "Neutral"},
+  {"year": 2026, "month": "Dec", "dmi": 0.0, "phase": "Neutral"}
+]

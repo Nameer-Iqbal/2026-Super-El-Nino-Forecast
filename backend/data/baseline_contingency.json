@@ -1,0 +1,219 @@
+{
+  "Punjab": {
+    "Monsoon": {
+      "risk_level": "High",
+      "impact": "Riverine flooding in Indus and Chenab basins, urban flooding in Lahore/Rawalpindi.",
+      "institutional": [
+        "Reinforce embankments along the Chenab and Indus rivers.",
+        "Establish relief camps and pre-position motorboats and emergency supplies.",
+        "Activate early warning systems at district levels."
+      ],
+      "household": [
+        "Elevate electronic appliances and food reserves above historical flood levels.",
+        "Identify nearest designated high-ground community shelter.",
+        "Store clean drinking water and emergency medical kits."
+      ]
+    },
+    "Winter": {
+      "risk_level": "Low",
+      "impact": "Dense fog and mild temperature drops, potential dry spell leading to smog.",
+      "institutional": [
+        "Coordinate highway traffic control for low visibility periods.",
+        "Monitor air quality index and issue health advisories."
+      ],
+      "household": [
+        "Use warm clothing and minimize outdoor exposure during peak smog hours.",
+        "Keep emergency contact numbers for highway police handy."
+      ]
+    },
+    "SpringSummer": {
+      "risk_level": "Medium",
+      "impact": "Heatwaves and sudden pre-monsoon windstorms causing crop damage.",
+      "institutional": [
+        "Set up heatwave response centers and public cooling stations.",
+        "Issue irrigation schedules to match forecasted water availability."
+      ],
+      "household": [
+        "Avoid direct exposure to sunlight during peak hours (11 AM to 4 PM).",
+        "Keep livestock hydrated and sheltered from extreme heat."
+      ]
+    }
+  },
+  "Sindh": {
+    "Monsoon": {
+      "risk_level": "Critical",
+      "impact": "Flash floods in hill torrents of Kirthar range, severe urban inundation in Karachi.",
+      "institutional": [
+        "De-silt major drainage channels and storm-water drains in Karachi.",
+        "Evacuate vulnerable populations in low-lying coastal areas.",
+        "Pre-position relief resources at the divisional level."
+      ],
+      "household": [
+        "Avoid contact with raw sewage and flooded roads to prevent waterborne diseases.",
+        "Turn off main gas and electrical switches if water enters the home.",
+        "Keep a stock of dry rations and clean water for at least 72 hours."
+      ]
+    },
+    "Winter": {
+      "risk_level": "Low",
+      "impact": "Mild weather, localized agricultural water shortage due to dry winter breeze.",
+      "institutional": [
+        "Manage canal water distribution efficiently for wheat cultivation."
+      ],
+      "household": [
+        "Adopt water-saving techniques in domestic and farming activities."
+      ]
+    },
+    "SpringSummer": {
+      "risk_level": "High",
+      "impact": "Extreme heatwaves in Jacobabad, Larkana, and Sukkur; maritime storm risks in Karachi.",
+      "institutional": [
+        "Implement mandatory labor breaks during peak heat hours.",
+        "Alert fishermen regarding high sea swell forecasts."
+      ],
+      "household": [
+        "Consume plenty of fluids and ORS to maintain hydration.",
+        "Secure roofing materials against high-speed coastal winds."
+      ]
+    }
+  },
+  "Balochistan": {
+    "Monsoon": {
+      "risk_level": "High",
+      "impact": "Flash flooding in seasonal dry streams (Nullahs) and mudslide risks in hilly terrains.",
+      "institutional": [
+        "Deploy rescue teams along key communication highways (N-25, N-40).",
+        "Clear debris from natural drainage pathways."
+      ],
+      "household": [
+        "Do not pitch tents or park vehicles in or near dry riverbeds (nullahs).",
+        "Secure emergency communication devices (radio/mobile with backup power)."
+      ]
+    },
+    "Winter": {
+      "risk_level": "High",
+      "impact": "Severe cold waves and drought risks in northern districts, snow blockades on passes.",
+      "institutional": [
+        "Pre-position snow-clearing machinery at Lak Pass and Kozak Pass.",
+        "Distribute winterization kits to vulnerable communities."
+      ],
+      "household": [
+        "Stock fuel wood/gas and dry food items before heavy snow forecast.",
+        "Protect exposed water pipes from freezing by wrapping them in insulation."
+      ]
+    },
+    "SpringSummer": {
+      "risk_level": "Medium",
+      "impact": "Water table depletion and agricultural drought in rain-fed areas.",
+      "institutional": [
+        "Promote water conservation and construct check dams for groundwater recharge."
+      ],
+      "household": [
+        "Prioritize water allocation for drinking and livestock over secondary uses."
+      ]
+    }
+  },
+  "Khyber Pakhtunkhwa": {
+    "Monsoon": {
+      "risk_level": "Critical",
+      "impact": "Landslides in hilly districts (Swat, Kaghan) and flash flooding in Kabul river.",
+      "institutional": [
+        "Establish landslide clearance units along Karakoram Highway and other major routes.",
+        "Monitor water levels at Nowshera continuously."
+      ],
+      "household": [
+        "Avoid travel during heavy rainfall due to active landslide threats.",
+        "Prepare evacuation bags with identity papers, medicines, and cash."
+      ]
+    },
+    "Winter": {
+      "risk_level": "Medium",
+      "impact": "Heavy snowfall in upper districts, blocking remote valleys.",
+      "institutional": [
+        "Ensure supply chains for essential commodities to cut-off valleys remain open."
+      ],
+      "household": [
+        "Keep alternative heating sources ready.",
+        "Do not venture out on icy roads without proper snow chains."
+      ]
+    },
+    "SpringSummer": {
+      "risk_level": "Medium",
+      "impact": "Glacial Lake Outburst Floods (GLOF) in Chitral and flash rainstorms.",
+      "institutional": [
+        "Install GLOF early warning sensors and coordinate community mock drills."
+      ],
+      "household": [
+        "Move to higher ground if unusual stream noise or water color change is observed."
+      ]
+    }
+  },
+  "Gilgit-Baltistan": {
+    "Monsoon": {
+      "risk_level": "High",
+      "impact": "GLOF events, landslides blocking the Indus highway, and isolated community valleys.",
+      "institutional": [
+        "Pre-position food reserves and fuel in district headquarters.",
+        "Keep helicopter rescue services on standby."
+      ],
+      "household": [
+        "Maintain a 15-day food reserve at household level during peak melt/rain season.",
+        "Follow local administration instructions immediately if evacuation is ordered."
+      ]
+    },
+    "Winter": {
+      "risk_level": "High",
+      "impact": "Extreme sub-zero temperatures, frostbite risks, and prolonged road blockages.",
+      "institutional": [
+        "Keep district medical centers stocked with frostbite and hypothermia medication."
+      ],
+      "household": [
+        "Insulate living spaces and maximize shared heating to conserve fuel."
+      ]
+    },
+    "SpringSummer": {
+      "risk_level": "Critical",
+      "impact": "High rate of glacial melting leading to sudden valley floods.",
+      "institutional": [
+        "Map safe evacuation paths and update community disaster committees."
+      ],
+      "household": [
+        "Avoid building permanent structures near active glacial melt streams."
+      ]
+    }
+  },
+  "AJ&K": {
+    "Monsoon": {
+      "risk_level": "High",
+      "impact": "Landslides, mudslides, and flash floods in Neelum and Jhelum valleys.",
+      "institutional": [
+        "Coordinate with hydroelectric dam operators for controlled water releases.",
+        "Set up first aid stations at tourist hotspots."
+      ],
+      "household": [
+        "Avoid building near steep slopes or unstable soil banks.",
+        "Keep a battery-operated radio tuned to local emergency frequencies."
+      ]
+    },
+    "Winter": {
+      "risk_level": "Medium",
+      "impact": "Heavy snowfall and sub-zero temperatures in upper Neelum and Leepa valleys.",
+      "institutional": [
+        "Distribute heating fuel subsidies to vulnerable households."
+      ],
+      "household": [
+        "Check roof structures for snow weight and clear them regularly."
+      ]
+    },
+    "SpringSummer": {
+      "risk_level": "Low",
+      "impact": "Unpredictable hail storms causing damage to fruit orchards.",
+      "institutional": [
+        "Provide crop insurance support and weather alerts for farmers."
+      ],
+      "household": [
+        "Use protective netting where possible to safeguard valuable crops."
+      ]
+    }
+  }
+}

@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --color-climate-dark: #f1f5f9;
+  --color-climate-card: #ffffff;
+  --color-climate-accent: #0f766e;
+  --color-climate-ninoHot: #e11d48;
+  --color-climate-iodCool: #059669;
+  --color-climate-border: #e2e8f0;
+
+  /* Redefine white & light gray text scales to be dark slate/gray for high readability */
+  --color-white: #0f172a;
+  --color-slate-100: #0f172a;
+  --color-slate-200: #1e293b;
+  --color-slate-300: #334155;
+  --color-slate-400: #475569;
+  --color-slate-500: #64748b;
+  --color-slate-700: #cbd5e1;
+  --color-slate-800: #cbd5e1;
+  --color-slate-900: #f8fafc;
+  --color-slate-950: #f8fafc;
+
+  /* Override sky color scale to map to a premium Teal/Mint theme */
+  --color-sky-50: #f0fdfa;
+  --color-sky-100: #ccfbf1;
+  --color-sky-200: #99f6e4;
+  --color-sky-300: #5eead4;
+  --color-sky-400: #2dd4bf;
+  --color-sky-500: #0d9488;
+  --color-sky-600: #0f766e;
+  --color-sky-700: #115e59;
+  --color-sky-800: #134e4a;
+  --color-sky-900: #115e59;
+  --color-sky-950: #ccfbf1;
+
+  /* Override risk badge background scales to be light pastel tints */
+  --color-rose-950: #ffe4e6;
+  --color-rose-300: #b91c1c;
+  --color-rose-200: #991b1b;
+  --color-rose-900: #fecdd3;
+  --color-rose-500: #f43f5e;
+
+  --color-amber-950: #fef3c7;
+  --color-amber-300: #b45309;
+  --color-amber-500: #f59e0b;
+
+  --color-yellow-950: #fef9c3;
+  --color-yellow-300: #a16207;
+  --color-yellow-500: #eab308;
+
+  --color-emerald-950: #d1fae5;
+  --color-emerald-300: #047857;
+  --color-emerald-500: #10b981;
+
+  --color-teal-950: #ccfbf1;
+  --color-teal-200: #0f766e;
+  --color-teal-900: #99f6e4;
+}
+
+@utility glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
+}
+
+@utility glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(13, 148, 136, 0.3);
+    box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.08), 0 8px 10px -6px rgba(13, 148, 136, 0.08);
+    transform: translateY(-2px);
+  }
+}
+
+@utility pulse-glow {
+  animation: pulse-subtle 3s infinite ease-in-out;
+}
+
+body {
+  @apply bg-climate-dark text-slate-900 font-sans antialiased;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(13, 148, 136, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(225, 29, 72, 0.05) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(14, 165, 233, 0.05) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Micro-animations */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .85; transform: scale(1.02); }
+}

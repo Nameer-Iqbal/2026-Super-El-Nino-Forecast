@@ -1,0 +1,14 @@
+[
+  {"year": 2026, "month": "Jan", "nino34": 0.8, "oni": 0.9, "phase": "Weak El Nino"},
+  {"year": 2026, "month": "Feb", "nino34": 1.1, "oni": 1.0, "phase": "Moderate El Nino"},
+  {"year": 2026, "month": "Mar", "nino34": 1.4, "oni": 1.3, "phase": "Moderate El Nino"},
+  {"year": 2026, "month": "Apr", "nino34": 1.8, "oni": 1.6, "phase": "Strong El Nino"},
+  {"year": 2026, "month": "May", "nino34": 2.1, "oni": 1.9, "phase": "Strong El Nino"},
+  {"year": 2026, "month": "Jun", "nino34": 2.4, "oni": 2.2, "phase": "Super El Nino"},
+  {"year": 2026, "month": "Jul", "nino34": 2.6, "oni": 2.4, "phase": "Super El Nino"},
+  {"year": 2026, "month": "Aug", "nino34": 2.5, "oni": 2.5, "phase": "Super El Nino"},
+  {"year": 2026, "month": "Sep", "nino34": 2.3, "oni": 2.4, "phase": "Super El Nino"},
+  {"year": 2026, "month": "Oct", "nino34": 2.0, "oni": 2.1, "phase": "Strong El Nino"},
+  {"year": 2026, "month": "Nov", "nino34": 1.7, "oni": 1.8, "phase": "Strong El Nino"},
+  {"year": 2026, "month": "Dec", "nino34": 1.3, "oni": 1.4, "phase": "Moderate El Nino"}
+]
