@@ -281,41 +281,41 @@ export default function App() {
       {/* Header Banner */}
       <header className="glass-panel border-b border-slate-800 py-6 px-8 mb-6 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <div className="bg-sky-500/10 p-2.5 rounded-lg border border-sky-500/30 pulse-glow">
-              <svg className="w-8 h-8 text-sky-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <div className="flex items-center gap-3 sm:gap-4 w-full md:w-auto">
+            <div className="bg-sky-500/10 p-2 sm:p-2.5 rounded-lg border border-sky-500/30 pulse-glow flex-shrink-0">
+              <svg className="w-6 h-6 sm:w-8 h-8 text-sky-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1.5M12 18.5V20M4.22 4.22l1.06 1.06M17.72 17.72l1.06 1.06M2 12h1.5M18.5 12H20M4.22 19.78l1.06-1.06M17.72 5.28l1.06-1.06m-6.5 6.5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
               </svg>
             </div>
             <div>
-              <h1 className="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+              <h1 className="text-lg sm:text-2xl font-bold tracking-tight text-white flex items-center gap-2">
                 Pakistan El Niño Predictive Platform
               </h1>
-              <p className="text-xs text-slate-400">
+              <p className="text-[10px] sm:text-xs text-slate-400">
                 Multi-basin climate monitoring & NIDM-NDMA safety guidelines
               </p>
             </div>
           </div>
 
           {/* Navigation Tabs */}
-          <div className="flex gap-2 bg-slate-900/80 p-1.5 rounded-xl border border-slate-800">
+          <div className="flex gap-1.5 sm:gap-2 bg-slate-900/80 p-1.5 rounded-xl border border-slate-800 overflow-x-auto max-w-full flex-nowrap scrollbar-thin">
             <button
               onClick={() => setActiveTab("forecast")}
-              className={`px-4 py-2 text-xs font-semibold rounded-lg transition-all cursor-pointer ${activeTab === "forecast" ? "bg-sky-500 text-slate-950 font-bold" : "text-slate-400 hover:text-slate-200"
+              className={`px-3 sm:px-4 py-2 text-xs font-semibold rounded-lg transition-all cursor-pointer whitespace-nowrap ${activeTab === "forecast" ? "bg-sky-500 text-slate-950 font-bold" : "text-slate-400 hover:text-slate-200"
                 }`}
             >
               Forecast & Advisories
             </button>
             <button
               onClick={() => setActiveTab("precautions")}
-              className={`px-4 py-2 text-xs font-semibold rounded-lg transition-all cursor-pointer ${activeTab === "precautions" ? "bg-sky-500 text-slate-950 font-bold" : "text-slate-400 hover:text-slate-200"
+              className={`px-3 sm:px-4 py-2 text-xs font-semibold rounded-lg transition-all cursor-pointer whitespace-nowrap ${activeTab === "precautions" ? "bg-sky-500 text-slate-950 font-bold" : "text-slate-400 hover:text-slate-200"
                 }`}
             >
               NDMA Precautions
             </button>
             <button
               onClick={() => setActiveTab("contacts")}
-              className={`px-4 py-2 text-xs font-semibold rounded-lg transition-all cursor-pointer ${activeTab === "contacts" ? "bg-sky-500 text-slate-950 font-bold" : "text-slate-400 hover:text-slate-200"
+              className={`px-3 sm:px-4 py-2 text-xs font-semibold rounded-lg transition-all cursor-pointer whitespace-nowrap ${activeTab === "contacts" ? "bg-sky-500 text-slate-950 font-bold" : "text-slate-400 hover:text-slate-200"
                 }`}
             >
               Emergency Contacts
@@ -329,8 +329,8 @@ export default function App() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             {/* Timeline Controls */}
             <section className="lg:col-span-12 glass-panel p-6 rounded-2xl">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-2">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                <div className="flex flex-wrap items-center gap-2">
                   <span className="text-sky-400 font-semibold text-sm">Chronological Forecast Tracker</span>
                   <span className="px-2 py-0.5 text-[10px] font-bold bg-sky-950 text-sky-300 rounded border border-sky-800">2026 Season</span>
                 </div>
@@ -338,7 +338,7 @@ export default function App() {
               </div>
 
               {/* Month Slider */}
-              <div className="relative pt-4 pb-6">
+              <div className="relative pt-4 pb-4">
                 <input
                   type="range"
                   min="0"
@@ -347,18 +347,18 @@ export default function App() {
                   onChange={(e) => setSelectedMonthIdx(parseInt(e.target.value))}
                   className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-sky-400 focus:outline-none"
                 />
-                <div className="flex justify-between mt-4">
+                <div className="flex justify-between mt-4 gap-1">
                   {MONTHS.map((m, idx) => (
                     <button
                       key={m.name}
                       onClick={() => setSelectedMonthIdx(idx)}
-                      className={`flex flex-col items-center transition-all ${idx === selectedMonthIdx
+                      className={`flex flex-col items-center transition-all min-w-[20px] sm:min-w-[40px] ${idx === selectedMonthIdx
                         ? "text-sky-400 font-bold scale-110"
                         : "text-slate-500 hover:text-slate-300"
                         }`}
                     >
-                      <span className="text-sm">{m.name}</span>
-                      <span className="text-[9px] opacity-75 mt-0.5 px-1 py-0.2 bg-slate-900 rounded border border-slate-800/40">
+                      <span className="text-xs sm:text-sm">{m.name}</span>
+                      <span className="hidden sm:inline-block text-[9px] opacity-75 mt-0.5 px-1 py-0.2 bg-slate-900 rounded border border-slate-800/40 whitespace-nowrap">
                         {m.season === "SpringSummer" ? "Spring/Sum" : m.season}
                       </span>
                     </button>
@@ -664,8 +664,8 @@ export default function App() {
               <p className="text-xs text-slate-400">Available nationwide and regionally for immediate disaster response and medical support.</p>
             </div>
 
-            <div className="glass-panel overflow-hidden rounded-2xl border border-slate-800">
-              <table className="w-full text-left border-collapse">
+            <div className="glass-panel overflow-x-auto rounded-2xl border border-slate-800">
+              <table className="w-full text-left border-collapse min-w-[500px] sm:min-w-full">
                 <thead>
                   <tr className="bg-slate-900 border-b border-slate-800 text-slate-400 text-xs font-bold uppercase tracking-wider">
                     <th className="p-4">Service</th>

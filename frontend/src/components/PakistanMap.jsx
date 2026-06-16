@@ -46,7 +46,7 @@ export default function PakistanMap({ selectedRegion, onSelectRegion, regionRisk
       {/* Grid of options to look at each province individually */}
       <div className="flex flex-col gap-2">
         <span className="text-xs font-semibold text-slate-400">Select Region Focus:</span>
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
           {PROVINCES.map((prov) => {
             const risk = regionRisks[prov.id] || "Low";
             const isSelected = selectedRegion === prov.id;
@@ -55,7 +55,7 @@ export default function PakistanMap({ selectedRegion, onSelectRegion, regionRisk
               <button
                 key={prov.id}
                 onClick={() => onSelectRegion(prov.id)}
-                className={`px-2 py-2 text-xs font-semibold rounded-lg border transition-all cursor-pointer text-center ${
+                className={`px-1.5 sm:px-2 py-2 text-[10px] sm:text-xs font-semibold rounded-lg border transition-all cursor-pointer text-center whitespace-nowrap ${
                   isSelected
                     ? "bg-sky-500/20 text-sky-300 border-sky-400/60 shadow-[0_0_8px_rgba(56,189,248,0.2)]"
                     : "bg-slate-800/40 text-slate-400 border-slate-700/50 hover:bg-slate-800/80 hover:text-slate-300"
