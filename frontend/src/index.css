@@ -1,75 +1,27 @@
 @import "tailwindcss";
 
 @theme {
-  --color-climate-dark: #f1f5f9;
-  --color-climate-card: #ffffff;
-  --color-climate-accent: #0f766e;
-  --color-climate-ninoHot: #e11d48;
-  --color-climate-iodCool: #059669;
-  --color-climate-border: #e2e8f0;
-
-  /* Redefine white & light gray text scales to be dark slate/gray for high readability */
-  --color-white: #0f172a;
-  --color-slate-100: #0f172a;
-  --color-slate-200: #1e293b;
-  --color-slate-300: #334155;
-  --color-slate-400: #475569;
-  --color-slate-500: #64748b;
-  --color-slate-700: #cbd5e1;
-  --color-slate-800: #cbd5e1;
-  --color-slate-900: #f8fafc;
-  --color-slate-950: #f8fafc;
-
-  /* Override sky color scale to map to a premium Teal/Mint theme */
-  --color-sky-50: #f0fdfa;
-  --color-sky-100: #ccfbf1;
-  --color-sky-200: #99f6e4;
-  --color-sky-300: #5eead4;
-  --color-sky-400: #2dd4bf;
-  --color-sky-500: #0d9488;
-  --color-sky-600: #0f766e;
-  --color-sky-700: #115e59;
-  --color-sky-800: #134e4a;
-  --color-sky-900: #115e59;
-  --color-sky-950: #ccfbf1;
-
-  /* Override risk badge background scales to be light pastel tints */
-  --color-rose-950: #ffe4e6;
-  --color-rose-300: #b91c1c;
-  --color-rose-200: #991b1b;
-  --color-rose-900: #fecdd3;
-  --color-rose-500: #f43f5e;
-
-  --color-amber-950: #fef3c7;
-  --color-amber-300: #b45309;
-  --color-amber-500: #f59e0b;
-
-  --color-yellow-950: #fef9c3;
-  --color-yellow-300: #a16207;
-  --color-yellow-500: #eab308;
-
-  --color-emerald-950: #d1fae5;
-  --color-emerald-300: #047857;
-  --color-emerald-500: #10b981;
-
-  --color-teal-950: #ccfbf1;
-  --color-teal-200: #0f766e;
-  --color-teal-900: #99f6e4;
+  --color-climate-dark: #060b13;      /* Deep cosmic background */
+  --color-climate-card: #0f1626;      /* Rich dark slate card background */
+  --color-climate-accent: #06b6d4;    /* Electric Cyan */
+  --color-climate-ninoHot: #f43f5e;   /* Rose / Hot El Nino */
+  --color-climate-iodCool: #10b981;   /* Emerald / Cool IOD */
+  --color-climate-border: rgba(255, 255, 255, 0.08); /* Sleek translucent border */
 }
 
 @utility glass-panel {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
+  background: rgba(13, 20, 35, 0.65);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
 }
 
 @utility glass-panel-hover {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
-    background: rgba(255, 255, 255, 0.9);
-    border-color: rgba(13, 148, 136, 0.3);
-    box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.08), 0 8px 10px -6px rgba(13, 148, 136, 0.08);
+    background: rgba(18, 28, 48, 0.85);
+    border-color: rgba(6, 182, 212, 0.3);
+    box-shadow: 0 12px 30px -5px rgba(6, 182, 212, 0.2);
     transform: translateY(-2px);
   }
 }
@@ -78,13 +30,66 @@
   animation: pulse-subtle 3s infinite ease-in-out;
 }
 
+@utility map-image-dark {
+  filter: invert(0.92) hue-rotate(180deg) brightness(0.85) contrast(1.2);
+}
+
 body {
-  @apply bg-climate-dark text-slate-900 font-sans antialiased;
+  @apply bg-climate-dark text-slate-200 font-sans antialiased;
   background-image: 
-    radial-gradient(at 0% 0%, rgba(13, 148, 136, 0.08) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(225, 29, 72, 0.05) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, rgba(14, 165, 233, 0.05) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, rgba(6, 182, 212, 0.12) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(244, 63, 94, 0.08) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(59, 130, 246, 0.06) 0px, transparent 50%);
   background-attachment: fixed;
+}
+
+/* Custom Range Input (Slider) Styling */
+.custom-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 9999px;
+  outline: none;
+  transition: background 0.2s ease;
+}
+
+.custom-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid #06b6d4;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.6), 0 2px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.custom-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: #06b6d4;
+  border-color: #ffffff;
+  box-shadow: 0 0 16px rgba(6, 182, 212, 0.9), 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.custom-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid #06b6d4;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.6), 0 2px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.custom-slider::-moz-range-thumb:hover {
+  transform: scale(1.2);
+  background: #06b6d4;
+  border-color: #ffffff;
+  box-shadow: 0 0 16px rgba(6, 182, 212, 0.9), 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* Micro-animations */

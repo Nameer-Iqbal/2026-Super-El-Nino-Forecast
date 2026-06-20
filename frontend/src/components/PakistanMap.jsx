@@ -35,11 +35,11 @@ export default function PakistanMap({ selectedRegion, onSelectRegion, regionRisk
       </div>
 
       {/* Map Bounding Container */}
-      <div className="relative w-full aspect-[4/3] overflow-hidden rounded-xl border border-slate-800 bg-white/5">
+      <div className="relative w-full aspect-[4/3] overflow-hidden rounded-xl border border-slate-800 bg-slate-950/20">
         <img
           src={mapImg}
           alt="Pakistan Regional Map"
-          className="w-full h-full object-cover opacity-95 scale-[1.42] origin-[54%_48%]"
+          className="w-full h-full object-cover opacity-85 scale-[1.42] origin-[54%_48%] map-image-dark"
         />
       </div>
 
@@ -51,17 +51,28 @@ export default function PakistanMap({ selectedRegion, onSelectRegion, regionRisk
             const risk = regionRisks[prov.id] || "Low";
             const isSelected = selectedRegion === prov.id;
             
+            // Risk dot colors
+            let riskDotClass = "bg-emerald-500 shadow-[0_0_6px_rgba(16,185,129,0.8)]";
+            if (risk?.toUpperCase() === "CRITICAL") {
+              riskDotClass = "bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.9)] animate-pulse";
+            } else if (risk?.toUpperCase() === "HIGH") {
+              riskDotClass = "bg-amber-500 shadow-[0_0_6px_rgba(245,158,11,0.8)]";
+            } else if (risk?.toUpperCase() === "MEDIUM") {
+              riskDotClass = "bg-yellow-500 shadow-[0_0_6px_rgba(234,179,8,0.8)]";
+            }
+
             return (
               <button
                 key={prov.id}
                 onClick={() => onSelectRegion(prov.id)}
-                className={`px-1.5 sm:px-2 py-2 text-[10px] sm:text-xs font-semibold rounded-lg border transition-all cursor-pointer text-center whitespace-nowrap ${
+                className={`px-1.5 sm:px-2 py-2.5 text-[10px] sm:text-xs font-bold rounded-lg border transition-all cursor-pointer flex items-center justify-center gap-1.5 whitespace-nowrap ${
                   isSelected
-                    ? "bg-sky-500/20 text-sky-300 border-sky-400/60 shadow-[0_0_8px_rgba(56,189,248,0.2)]"
+                    ? "bg-sky-500/20 text-sky-300 border-sky-400/60 shadow-[0_0_8px_rgba(56,189,248,0.3)]"
                     : "bg-slate-800/40 text-slate-400 border-slate-700/50 hover:bg-slate-800/80 hover:text-slate-300"
                 }`}
               >
-                {prov.name === "Khyber Pakhtunkhwa" ? "KPK" : prov.name}
+                <span className={`w-1.5 h-1.5 rounded-full ${riskDotClass}`} />
+                <span>{prov.name === "Khyber Pakhtunkhwa" ? "KPK" : prov.name}</span>
               </button>
             );
           })}

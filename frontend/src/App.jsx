@@ -331,38 +331,74 @@ export default function App() {
             <section className="lg:col-span-12 glass-panel p-6 rounded-2xl">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="text-sky-400 font-semibold text-sm">Chronological Forecast Tracker</span>
-                  <span className="px-2 py-0.5 text-[10px] font-bold bg-sky-950 text-sky-300 rounded border border-sky-800">2026 Season</span>
+                  <span className="text-sky-400 font-bold text-sm tracking-wide">Chronological Forecast Tracker</span>
+                  <span className="px-2 py-0.5 text-[10px] font-bold bg-sky-950/80 text-sky-300 rounded border border-sky-800/60 shadow-[0_0_8px_rgba(56,189,248,0.15)]">2026 Season</span>
                 </div>
-                <span className="text-xs text-slate-400">Drag slider to shift climate operational months</span>
+                <span className="text-xs text-slate-400 font-medium">Drag slider to shift climate operational months</span>
               </div>
 
               {/* Month Slider */}
-              <div className="relative pt-4 pb-4">
-                <input
-                  type="range"
-                  min="0"
-                  max="11"
-                  value={selectedMonthIdx}
-                  onChange={(e) => setSelectedMonthIdx(parseInt(e.target.value))}
-                  className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-sky-400 focus:outline-none"
-                />
-                <div className="flex justify-between mt-4 gap-1">
-                  {MONTHS.map((m, idx) => (
-                    <button
-                      key={m.name}
-                      onClick={() => setSelectedMonthIdx(idx)}
-                      className={`flex flex-col items-center transition-all min-w-[20px] sm:min-w-[40px] ${idx === selectedMonthIdx
-                        ? "text-sky-400 font-bold scale-110"
-                        : "text-slate-500 hover:text-slate-300"
-                        }`}
-                    >
-                      <span className="text-xs sm:text-sm">{m.name}</span>
-                      <span className="hidden sm:inline-block text-[9px] opacity-75 mt-0.5 px-1 py-0.2 bg-slate-900 rounded border border-slate-800/40 whitespace-nowrap">
-                        {m.season === "SpringSummer" ? "Spring/Sum" : m.season}
-                      </span>
-                    </button>
-                  ))}
+              <div className="relative pt-6 pb-6 px-4 bg-slate-950/30 rounded-2xl border border-slate-800/40 mb-2">
+                <div className="relative mb-6">
+                  {/* Slider Track and Input */}
+                  <input
+                    type="range"
+                    min="0"
+                    max="11"
+                    value={selectedMonthIdx}
+                    onChange={(e) => setSelectedMonthIdx(parseInt(e.target.value))}
+                    className="custom-slider w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer focus:outline-none"
+                    style={{
+                      background: `linear-gradient(to right, var(--color-sky-500) 0%, var(--color-sky-400) ${(selectedMonthIdx / 11) * 100}%, var(--color-slate-800) ${(selectedMonthIdx / 11) * 100}%, var(--color-slate-800) 100%)`
+                    }}
+                  />
+                </div>
+
+                {/* Timeline Buttons / Month Indicators */}
+                <div className="flex justify-between gap-1 relative">
+                  {MONTHS.map((m, idx) => {
+                    const isActive = idx === selectedMonthIdx;
+                    // Determine season style
+                    let seasonBadgeClass = "";
+                    if (m.season === "Winter") {
+                      seasonBadgeClass = isActive 
+                        ? "bg-blue-500/20 text-blue-300 border-blue-400/40" 
+                        : "bg-slate-900/60 text-blue-400/60 border-slate-800/30";
+                    } else if (m.season === "SpringSummer") {
+                      seasonBadgeClass = isActive 
+                        ? "bg-amber-500/20 text-amber-300 border-amber-400/40" 
+                        : "bg-slate-900/60 text-amber-400/60 border-slate-800/30";
+                    } else { // Monsoon
+                      seasonBadgeClass = isActive 
+                        ? "bg-teal-500/20 text-teal-300 border-teal-400/40" 
+                        : "bg-slate-900/60 text-teal-400/60 border-slate-800/30";
+                    }
+
+                    return (
+                      <button
+                        key={m.name}
+                        onClick={() => setSelectedMonthIdx(idx)}
+                        className={`flex flex-col items-center transition-all cursor-pointer min-w-[24px] sm:min-w-[48px] focus:outline-none group`}
+                      >
+                        <span className={`text-xs sm:text-sm font-bold tracking-tight transition-all duration-200 ${
+                          isActive 
+                            ? "text-sky-400 scale-110 drop-shadow-[0_0_10px_rgba(6,182,212,0.4)]" 
+                            : "text-slate-400 group-hover:text-slate-200"
+                        }`}>
+                          {m.name}
+                        </span>
+                        
+                        {/* Connecting visual pointer */}
+                        <div className={`w-1 h-1.5 my-1.5 transition-all rounded-full ${
+                          isActive ? "bg-sky-400 scale-125 shadow-[0_0_8px_rgba(6,182,212,0.8)]" : "bg-transparent group-hover:bg-slate-700/50"
+                        }`} />
+
+                        <span className={`hidden sm:inline-block text-[9px] font-bold transition-all duration-200 px-1.5 py-0.5 rounded border whitespace-nowrap ${seasonBadgeClass}`}>
+                          {m.season === "SpringSummer" ? "Spring/Sum" : m.season}
+                        </span>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
             </section>
