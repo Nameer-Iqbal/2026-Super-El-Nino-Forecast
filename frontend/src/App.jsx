@@ -109,8 +109,8 @@ export default function App() {
   const selectedMonth = MONTHS[selectedMonthIdx].name;
   const selectedSeason = MONTHS[selectedMonthIdx].season;
 
-  // Base API configuration
-  const API_BASE = "http://127.0.0.1:5000/api";
+  // Base API configuration (uses environment variable on production, falls back to localhost)
+  const API_BASE = import.meta.env.VITE_API_BASE || "http://127.0.0.1:5000/api";
 
   const fetchData = async () => {
     setLoading(true);
